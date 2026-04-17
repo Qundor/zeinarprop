@@ -3,12 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>About & Contact | Zeinar Properties</title>
+
+<meta name="description" content="Zeinar Properties is a trusted construction company in Cape Town offering building, painting, tiling, plumbing, and more. Contact us today.">
+
 <link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<!-- Font Awesome -->
+
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<style>
+
+/* HERO */
+.about-hero{
+    height:50vh;
+    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('images/hero.jpeg') center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:center;
+}
+
+.about-hero h1{
+    font-size:42px;
+}
+
+/* ABOUT GRID */
+.about-section{
+    padding:80px 8%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about-text h2{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    color:#475569;
+    line-height:1.8;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:15px;
+}
+
+/* WHY US */
+.why-us{
+    background:#f8fafc;
+    padding:80px 8%;
+    text-align:center;
+}
+
+.why-us h2{
+    font-size:32px;
+    margin-bottom:40px;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.why-card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.06);
+    transition:0.3s;
+}
+
+.why-card:hover{
+    transform:translateY(-8px);
+}
+
+/* CONTACT */
+.contact{
+    padding:80px 8%;
+    text-align:center;
+}
+
+.contact p{
+    color:#64748b;
+}
+
+.contact form{
+    max-width:500px;
+    margin:40px auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input, textarea{
+    padding:12px;
+    border:1px solid #ddd;
+    border-radius:6px;
+}
+
+button{
+    padding:14px;
+    background:#0f172a;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.contact-info{
+    margin-top:30px;
+    font-size:15px;
+}
+
+.contact-info i{
+    color:#f59e0b;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .about-section{
+        grid-template-columns:1fr;
+    }
+}
+
+</style>
+
 </head>
+
 <body>
 
 <!-- HEADER -->
@@ -21,42 +150,111 @@
     </nav>
 </header>
 
-<!-- ABOUT SECTION -->
-<section class="about">
-    <h2>About Zeinar Properties</h2>
-    <p>
-        Zeinar Properties is a trusted construction and home improvement company based in Strand, Western Cape, Cape Town. 
-        With years of experience in construction, painting, tiling, plumbing, landscaping, and roofing, 
-        we pride ourselves on delivering high-quality, reliable, and affordable services across Cape Town. 
-        Our team of skilled professionals is committed to transforming your property with precision and care.
-    </p>
+<!-- HERO -->
+<section class="about-hero">
+    <h1>About Zeinar Properties</h1>
 </section>
 
-<!-- CONTACT SECTION -->
+<!-- ABOUT -->
+<section class="about-section">
+
+    <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>
+            Zeinar Properties is a trusted construction and home improvement company based in Strand, Cape Town. 
+            We specialize in construction, painting, tiling, plumbing, landscaping, and roofing services.
+        </p>
+
+        <p>
+            With years of experience, we are committed to delivering high-quality workmanship, reliable service, 
+            and affordable solutions tailored to your needs.
+        </p>
+    </div>
+
+    <div class="about-image">
+        <img src="images/paving1.jpeg" alt="Construction work in Cape Town">
+    </div>
+
+</section>
+
+<!-- WHY US -->
+<section class="why-us">
+    <h2>Why Choose Us</h2>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <h3>✔ Experienced Team</h3>
+            <p>Skilled professionals with years of experience.</p>
+        </div>
+
+        <div class="why-card">
+            <h3>✔ Affordable Pricing</h3>
+            <p>Quality services at competitive prices.</p>
+        </div>
+
+        <div class="why-card">
+            <h3>✔ Reliable Service</h3>
+            <p>We deliver projects on time with precision.</p>
+        </div>
+
+        <div class="why-card">
+            <h3>✔ Quality Guaranteed</h3>
+            <p>Your satisfaction is our top priority.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
 <section class="contact">
     <h2>Contact Us</h2>
-    <p>Have a project in mind? Fill out the form below or contact us directly via WhatsApp or phone.</p>
+    <p>Have a project in mind? Send us a message and we’ll get back to you instantly.</p>
 
-    <form action="https://wa.me/27833051734" method="get" target="_blank">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
+    <form onsubmit="sendToWhatsApp(); return false;">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send via WhatsApp</button>
     </form>
 
     <div class="contact-info">
         <p><i class="fas fa-map-marker-alt"></i> Strand, Western Cape, Cape Town</p>
-        <p><i class="fab fa-whatsapp"></i> WhatsApp: 0624830475 | 083 305 1734</p>
+        <p><i class="fab fa-whatsapp"></i> 0624830475 | 083 305 1734</p>
     </div>
 </section>
-<!-- WHATSAPP BUTTON -->
+
+<!-- WHATSAPP FLOAT -->
 <a href="https://wa.me/27833051734" class="whatsapp" target="_blank">
-    <i class="fab fa-whatsapp"></i> Chat With Us
+    Chat With Us
 </a>
+
 <!-- FOOTER -->
 <footer>
-    <p>📍 Strand, Western Cape, Cape Town | 📞  0624830475 | 0833051734</p>
+    <p>📍 Strand, Cape Town | 📞 062 483 0475 | 083 305 1734</p>
 </footer>
+
+<!-- FIXED SCRIPT -->
+<script>
+function sendToWhatsApp(){
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let message = document.getElementById("message").value;
+
+    let phoneNumber = "27833051734";
+
+    let text =
+        "Hello Zeinar Properties,\n\n" +
+        "I would like to make an enquiry.\n\n" +
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Message: " + message;
+
+    let url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(text);
+
+    window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
