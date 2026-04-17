@@ -42,7 +42,7 @@
     <div class="service-grid">
 
         <div class="service-card">
-            <img src="images/bricklaying1.jpeg" alt="Construction services Cape Town">
+            <img src="images/construction.jpg" alt="Construction services Cape Town">
             <div class="service-content">
                 <h3>Construction</h3>
                 <p>We build durable and modern structures tailored to your needs.</p>
@@ -146,7 +146,7 @@
     <p>📍 Cape Town | 📞 083 305 1734</p>
 </footer>
 
-<!-- SCRIPT -->
+<!-- ✅ FIXED SCRIPT -->
 <script>
 function sendToWhatsApp(){
     let name = document.getElementById("name").value;
@@ -155,14 +155,14 @@ function sendToWhatsApp(){
 
     let phoneNumber = "27833051734";
 
-    let url = "https://wa.me/" + phoneNumber + "?text=" 
-        + encodeURIComponent(
-            "Hello Zeinar Properties,%0A%0A" +
-            "I would like to request a quote.%0A%0A" +
-            "Name: " + name + "%0A" +
-            "Email: " + email + "%0A" +
-            "Message: " + message
-        );
+    let text =
+        "Hello Zeinar Properties,\n\n" +
+        "I would like to request a quote.\n\n" +
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Message: " + message;
+
+    let url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(text);
 
     window.open(url, "_blank");
 }
